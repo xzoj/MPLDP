@@ -1,0 +1,1894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFD5A4F9-3ABA-4666-8B1B-96352FA00C40}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LandingPage</RootNamespace>
+    <AssemblyName>LandingPage</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InformationController.cs" />
+    <Compile Include="Controllers\LandingPagesController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006102024402_update_role.cs" />
+    <Compile Include="Migrations\202006102024402_update_role.Designer.cs">
+      <DependentUpon>202006102024402_update_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Information.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminTemplate\404.html" />
+    <Content Include="AdminTemplate\500.html" />
+    <Content Include="AdminTemplate\css\bootstrap-fileupload.min.css" />
+    <Content Include="AdminTemplate\css\bootstrap-reset.css" />
+    <Content Include="AdminTemplate\css\bootstrap.min.css" />
+    <Content Include="AdminTemplate\css\clndr.css" />
+    <Content Include="AdminTemplate\css\custom-ico-fonts.css" />
+    <Content Include="AdminTemplate\css\jquery-ui-1.10.3.css" />
+    <Content Include="AdminTemplate\css\jquery.stepy.css" />
+    <Content Include="AdminTemplate\css\owl.carousel.css" />
+    <Content Include="AdminTemplate\css\owl.theme.css" />
+    <Content Include="AdminTemplate\css\style-responsive.css" />
+    <Content Include="AdminTemplate\css\style.css" />
+    <Content Include="AdminTemplate\css\table-responsive.css" />
+    <Content Include="AdminTemplate\images\404-error.png" />
+    <Content Include="AdminTemplate\images\500-error.png" />
+    <Content Include="AdminTemplate\images\alert.png" />
+    <Content Include="AdminTemplate\images\avatar-mini.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-avatar-2.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-avatar.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-sm-img.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-thumb-1.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-thumb-2.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-thumb-3.jpg" />
+    <Content Include="AdminTemplate\images\blog\blog-wide-img.jpg" />
+    <Content Include="AdminTemplate\images\blog\image2.jpg" />
+    <Content Include="AdminTemplate\images\blog\image3.jpg" />
+    <Content Include="AdminTemplate\images\details_close.png" />
+    <Content Include="AdminTemplate\images\details_open.png" />
+    <Content Include="AdminTemplate\images\error.png" />
+    <Content Include="AdminTemplate\images\gallery\image1.jpg" />
+    <Content Include="AdminTemplate\images\gallery\image2.jpg" />
+    <Content Include="AdminTemplate\images\gallery\image3.jpg" />
+    <Content Include="AdminTemplate\images\gallery\image4.jpg" />
+    <Content Include="AdminTemplate\images\gallery\image5.jpg" />
+    <Content Include="AdminTemplate\images\gallery\sm-img-1.jpg" />
+    <Content Include="AdminTemplate\images\gallery\sm-img-2.jpg" />
+    <Content Include="AdminTemplate\images\gallery\sm-img-3.jpg" />
+    <Content Include="AdminTemplate\images\gallery\wdgt-img.jpg" />
+    <Content Include="AdminTemplate\images\input-spinner.gif" />
+    <Content Include="AdminTemplate\images\invoice-logo.jpg" />
+    <Content Include="AdminTemplate\images\lockscreen-bg.jpg" />
+    <Content Include="AdminTemplate\images\login-bg.jpg" />
+    <Content Include="AdminTemplate\images\login-logo.png" />
+    <Content Include="AdminTemplate\images\logo.png" />
+    <Content Include="AdminTemplate\images\logo_icon.png" />
+    <Content Include="AdminTemplate\images\minus.png" />
+    <Content Include="AdminTemplate\images\photos\user-avatar.png" />
+    <Content Include="AdminTemplate\images\photos\user1.png" />
+    <Content Include="AdminTemplate\images\photos\user2.png" />
+    <Content Include="AdminTemplate\images\photos\user3.png" />
+    <Content Include="AdminTemplate\images\photos\user4.png" />
+    <Content Include="AdminTemplate\images\photos\user5.png" />
+    <Content Include="AdminTemplate\images\photos\userprofile.png" />
+    <Content Include="AdminTemplate\images\plus-white.png" />
+    <Content Include="AdminTemplate\images\plus.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\css\demo_page.css" />
+    <Content Include="AdminTemplate\js\advanced-datatable\css\demo_table.css" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\back_disabled.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\back_enabled.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\back_enabled_hover.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\forward_disabled.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\forward_enabled.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\forward_enabled_hover.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\sort_asc.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\sort_asc_disabled.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\sort_both.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\sort_desc.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\images\sort_desc_disabled.png" />
+    <Content Include="AdminTemplate\js\advanced-datatable\js\jquery.dataTables.js" />
+    <Content Include="AdminTemplate\js\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="AdminTemplate\js\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="AdminTemplate\js\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="AdminTemplate\js\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="AdminTemplate\js\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="AdminTemplate\js\bootstrap-datepicker\css\datepicker-custom.css" />
+    <Content Include="AdminTemplate\js\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="AdminTemplate\js\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="AdminTemplate\js\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="AdminTemplate\js\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="AdminTemplate\js\bootstrap-datetimepicker\css\datetimepicker-custom.css" />
+    <Content Include="AdminTemplate\js\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="AdminTemplate\js\bootstrap-fileupload.min.js" />
+    <Content Include="AdminTemplate\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="AdminTemplate\js\bootstrap-timepicker\css\timepicker.css" />
+    <Content Include="AdminTemplate\js\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="AdminTemplate\js\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="AdminTemplate\js\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="AdminTemplate\js\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="AdminTemplate\js\bootstrap-wysihtml5\wysiwyg-color.css" />
+    <Content Include="AdminTemplate\js\bootstrap.min.js" />
+    <Content Include="AdminTemplate\js\c3-chart\c3-chart.init.js" />
+    <Content Include="AdminTemplate\js\c3-chart\c3.css" />
+    <Content Include="AdminTemplate\js\c3-chart\c3.js" />
+    <Content Include="AdminTemplate\js\calendar\clndr.js" />
+    <Content Include="AdminTemplate\js\calendar\evnt.calendar.init.js" />
+    <Content Include="AdminTemplate\js\calendar\moment-2.2.1.js" />
+    <Content Include="AdminTemplate\js\chart-js\Chart.js" />
+    <Content Include="AdminTemplate\js\chart-js\chartjs.init.js" />
+    <Content Include="AdminTemplate\js\ckeditor\ckeditor.js" />
+    <Content Include="AdminTemplate\js\ckeditor\config.js" />
+    <Content Include="AdminTemplate\js\ckeditor\contents.css" />
+    <Content Include="AdminTemplate\js\ckeditor\lang\vi.js" />
+    <Content Include="AdminTemplate\js\ckeditor\skins\moono\editor.css" />
+    <Content Include="AdminTemplate\js\ckeditor\skins\moono\icons.png" />
+    <Content Include="AdminTemplate\js\ckeditor\styles.js" />
+    <Content Include="AdminTemplate\js\dashboard-chart-init.js" />
+    <Content Include="AdminTemplate\js\data-tables\DT_bootstrap.css" />
+    <Content Include="AdminTemplate\js\data-tables\DT_bootstrap.js" />
+    <Content Include="AdminTemplate\js\data-tables\images\404.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\500.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\basic_table.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\blank_page.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\blog_details.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\blog_list.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\boxed_view.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\buttons.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\c3chart.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\calendar.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\chartjs.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\chat.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\css\clndr.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\css\style-responsive.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\css\style.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\directory.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\dropzone.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\dynamic_table.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\editable_table.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\editors.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\flot_chart.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\fontawesome.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\form_advanced_components.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\form_layouts.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\form_validation.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\form_wizard.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\gallery.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\general.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\google_map.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\grids.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\horizontal_menu.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\gallery\image3.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\gallery\wdgt-img.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\logo.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\logo_icon.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\user-avatar.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\user1.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\user2.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\user3.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\user4.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\user5.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\images\photos\userprofile.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\index.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\index_alt.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\inline_editors.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\invoice.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\bootstrap.min.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\easypiechart\easypiechart-init.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.selection.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.stack.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.time.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\flot-chart\jquery.flot.tooltip.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\icheck-init.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\iCheck\jquery.icheck.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\minimal.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\blue.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\red.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\square.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\jquery-1.10.2.min.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\jquery-migrate-1.2.1.min.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\jquery-ui-1.9.2.custom.min.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\jquery.nicescroll.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\main-chart.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\modernizr.min.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\scripts.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\sparkline\jquery.sparkline.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\js\sparkline\sparkline-init.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\leftmenu_collapsed_view.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\lock_screen.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\login.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\mail.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\mail_compose.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\mail_view.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\morris.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\nestable.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\panels.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\pickers.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\pricing_table.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\profile.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\registration.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\responsive_table.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\slider.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\sort_asc.png" />
+    <Content Include="AdminTemplate\js\data-tables\images\sort_asc_disabled.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\sort_both.png" />
+    <Content Include="AdminTemplate\js\data-tables\images\sort_desc.png" />
+    <Content Include="AdminTemplate\js\data-tables\images\sort_desc_disabled.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\tabs-accordions.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\timeline.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\tree_view.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\typography.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\vector_map.html" />
+    <Content Include="AdminTemplate\js\data-tables\images\widgets.html" />
+    <Content Include="AdminTemplate\js\data-tables\jquery.dataTables.js" />
+    <Content Include="AdminTemplate\js\dropzone\css\dropzone.css" />
+    <Content Include="AdminTemplate\js\dropzone\dropzone.js" />
+    <Content Include="AdminTemplate\js\dropzone\images\spritemap%402x.png" />
+    <Content Include="AdminTemplate\js\dropzone\images\spritemap.png" />
+    <Content Include="AdminTemplate\js\dynamic_table_init.js" />
+    <Content Include="AdminTemplate\js\easypiechart\easypiechart-init.js" />
+    <Content Include="AdminTemplate\js\easypiechart\jquery.easypiechart.js" />
+    <Content Include="AdminTemplate\js\editable-table.js" />
+    <Content Include="AdminTemplate\js\external-dragging-calendar.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.pie.resize.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.resize.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.selection.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.stack.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.time.js" />
+    <Content Include="AdminTemplate\js\flot-chart\jquery.flot.tooltip.js" />
+    <Content Include="AdminTemplate\js\flot.chart.init.js" />
+    <Content Include="AdminTemplate\js\fuelux\css\tree-style.css" />
+    <Content Include="AdminTemplate\js\fuelux\img\tree-icons.png" />
+    <Content Include="AdminTemplate\js\fuelux\js\spinner.min.js" />
+    <Content Include="AdminTemplate\js\fuelux\js\tree.min.js" />
+    <Content Include="AdminTemplate\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="AdminTemplate\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="AdminTemplate\js\google-map\gmaps-init.js" />
+    <Content Include="AdminTemplate\js\google-map\gmaps.js" />
+    <Content Include="AdminTemplate\js\gritter\css\jquery.gritter.css" />
+    <Content Include="AdminTemplate\js\gritter\images\gritter-light.png" />
+    <Content Include="AdminTemplate\js\gritter\images\gritter.png" />
+    <Content Include="AdminTemplate\js\gritter\images\ie-spacer.gif" />
+    <Content Include="AdminTemplate\js\gritter\js\gritter-init.js" />
+    <Content Include="AdminTemplate\js\gritter\js\jquery.gritter.js" />
+    <Content Include="AdminTemplate\js\icheck-init.js" />
+    <Content Include="AdminTemplate\js\iCheck\jquery.icheck.js" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\blue.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\blue.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\green%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\green.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\green.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\grey.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\grey.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\purple.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\purple.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\red%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\red.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\red.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\yellow.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\flat\yellow.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\blue.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\blue.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\green.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\green.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\minimal.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\minimal.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\purple.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\purple.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\red.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\red.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\yellow.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\minimal\yellow.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\blue%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\blue.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\blue.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\green%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\green.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\green.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\purple%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\purple.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\purple.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\red%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\red.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\red.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\square%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\square.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\square.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\yellow.css" />
+    <Content Include="AdminTemplate\js\iCheck\skins\square\yellow.png" />
+    <Content Include="AdminTemplate\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.css" />
+    <Content Include="AdminTemplate\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="AdminTemplate\js\ion.rangeSlider-1.8.2\img\sprite-skin-flat.png" />
+    <Content Include="AdminTemplate\js\ion.rangeSlider-1.8.2\js\ion-rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="AdminTemplate\js\ios-switch\ios-init.js" />
+    <Content Include="AdminTemplate\js\ios-switch\switchery.css" />
+    <Content Include="AdminTemplate\js\ios-switch\switchery.js" />
+    <Content Include="AdminTemplate\js\jquery-1.10.2.min.js" />
+    <Content Include="AdminTemplate\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="AdminTemplate\js\jquery-multi-select\css\multi-select.css" />
+    <Content Include="AdminTemplate\js\jquery-multi-select\img\switch.png" />
+    <Content Include="AdminTemplate\js\jquery-multi-select\js\jquery.multi-select.js" />
+    <Content Include="AdminTemplate\js\jquery-multi-select\js\jquery.quicksearch.js" />
+    <Content Include="AdminTemplate\js\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="AdminTemplate\js\jquery-tags-input\jquery.tagsinput.js" />
+    <Content Include="AdminTemplate\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="AdminTemplate\js\jquery.isotope.js" />
+    <Content Include="AdminTemplate\js\jquery.nicescroll.js" />
+    <Content Include="AdminTemplate\js\jquery.stepy.js" />
+    <Content Include="AdminTemplate\js\jquery.validate.min.js" />
+    <Content Include="AdminTemplate\js\jvector-map\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="AdminTemplate\js\jvector-map\jqvmap\jquery.vmap.js" />
+    <Content Include="AdminTemplate\js\jvector-map\jqvmap\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="AdminTemplate\js\jvector-map\jqvmap\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="AdminTemplate\js\jvector-map\jqvmap\maps\continents\jquery.vmap.europe.js" />
+    <Content Include="AdminTemplate\js\jvector-map\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="AdminTemplate\js\main-chart.js" />
+    <Content Include="AdminTemplate\js\modernizr.min.js" />
+    <Content Include="AdminTemplate\js\morris-chart\morris.css" />
+    <Content Include="AdminTemplate\js\morris-chart\morris.init.js" />
+    <Content Include="AdminTemplate\js\morris-chart\morris.js" />
+    <Content Include="AdminTemplate\js\morris-chart\raphael-min.js" />
+    <Content Include="AdminTemplate\js\multi-select-init.js" />
+    <Content Include="AdminTemplate\js\nestable-init.js" />
+    <Content Include="AdminTemplate\js\nestable\jquery.nestable.css" />
+    <Content Include="AdminTemplate\js\nestable\jquery.nestable.js" />
+    <Content Include="AdminTemplate\js\owl.carousel.js" />
+    <Content Include="AdminTemplate\js\pickers-init.js" />
+    <Content Include="AdminTemplate\js\scripts.js" />
+    <Content Include="AdminTemplate\js\sparkline\jquery.sparkline.js" />
+    <Content Include="AdminTemplate\js\sparkline\sparkline-init.js" />
+    <Content Include="AdminTemplate\js\spinner-init.js" />
+    <Content Include="AdminTemplate\js\tagsinput-init.js" />
+    <Content Include="AdminTemplate\js\tree-init.js" />
+    <Content Include="AdminTemplate\js\validation-init.js" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\icofont.min.css" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\owl.carousel.css" />
+    <Content Include="assets\css\owl.theme.default.min.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\backmodal.png" />
+    <Content Include="assets\img\banner_bg.jpg" />
+    <Content Include="assets\img\blog\img-1.jpg" />
+    <Content Include="assets\img\body-bg.png" />
+    <Content Include="assets\img\client-1.jpg" />
+    <Content Include="assets\img\client-2.jpg" />
+    <Content Include="assets\img\contact-bg.jpg" />
+    <Content Include="assets\img\contact-us.jpg" />
+    <Content Include="assets\img\counter-bg.jpg" />
+    <Content Include="assets\img\course\course-img-1.jpg" />
+    <Content Include="assets\img\course\course-img-2.jpg" />
+    <Content Include="assets\img\course\course-img-3.jpg" />
+    <Content Include="assets\img\course\course-img-4.jpg" />
+    <Content Include="assets\img\course\course-img-5.jpg" />
+    <Content Include="assets\img\course\course-img-6.jpg" />
+    <Content Include="assets\img\icons\favicon.png" />
+    <Content Include="assets\img\icons\grab.png" />
+    <Content Include="assets\img\icons\logo-top-1.png" />
+    <Content Include="assets\img\icons\logo-top-2.png" />
+    <Content Include="assets\img\icons\logo-top-3.png" />
+    <Content Include="assets\img\logo-black.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\main.png" />
+    <Content Include="assets\img\teacher-image.png" />
+    <Content Include="assets\img\teachers\teacher-image-1.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-2.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-3.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-4.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-5.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-6.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-7.jpg" />
+    <Content Include="assets\img\teachers\teacher-image-8.jpg" />
+    <Content Include="assets\img\testimonial-bg.jpg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\jquery-contact.js" />
+    <Content Include="assets\js\jquery-ui.js" />
+    <Content Include="assets\js\jquery.ajaxchimp.min.js" />
+    <Content Include="assets\js\jquery.counterup.min.js" />
+    <Content Include="assets\js\jquery.easing.min.js" />
+    <Content Include="assets\js\jquery.magnific-popup.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\jquery.mixitup.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\waypoints.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\icofont.woff2" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Information\Create.cshtml" />
+    <Content Include="Views\Information\Delete.cshtml" />
+    <Content Include="Views\Information\Details.cshtml" />
+    <Content Include="Views\Information\Edit.cshtml" />
+    <Content Include="Views\Information\Index.cshtml" />
+    <Content Include="Views\Shared_Client\_LayoutClient.cshtml" />
+    <Content Include="Views\LandingPages\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\RegisterRole.cshtml" />
+    <Content Include="Views\Shared_Client\Modal.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_ModalContent.cshtml" />
+    <Content Include="Views\Shared_Admin\_Layout.cshtml" />
+    <Content Include="Views\Shared_Admin\_Header.cshtml" />
+    <Content Include="Views\Shared_Admin\_LeftBar.cshtml" />
+    <Content Include="Views\Shared_Admin\_Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdminTemplate\images\css\css\css\" />
+    <Folder Include="AdminTemplate\images\css\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\images\css\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\css\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\css\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\css\css\" />
+    <Folder Include="AdminTemplate\images\images\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\gallery\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\images\css\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\css\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\images\photos\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\css\css\" />
+    <Folder Include="AdminTemplate\images\js\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\easypiechart\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\flot-chart\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\minimal\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\iCheck\skins\square\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\images\css\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\css\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\images\js\sparkline\js\sparkline\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\css\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\gallery\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\images\photos\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\easypiechart\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\flot-chart\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\minimal\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\iCheck\skins\square\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\js\sparkline\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\css\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\images\gallery\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\images\photos\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\js\easypiechart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\js\flot-chart\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\js\iCheck\skins\minimal\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\js\iCheck\skins\square\" />
+    <Folder Include="AdminTemplate\js\data-tables\images\js\sparkline\js\sparkline\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Roles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006102024402_update_role.resx">
+      <DependentUpon>202006102024402_update_role.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58619</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44320/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

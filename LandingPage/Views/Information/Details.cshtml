@@ -1,0 +1,89 @@
+﻿@model LandingPage.Models.Information
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared_Admin/_Layout.cshtml";
+}
+<div class="wrapper">
+
+    <section class="panel">
+        <header class="panel-heading">
+            Chi Tiết
+        </header>
+
+        <div class="panel-body">
+            <div>
+                
+                <table class="table table-dark">
+                    <tr>
+                        <th>
+                            Người Gửi
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(model => model.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(model => model.Email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Điện Thoại
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(model => model.Phone)
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th>
+                            Ghi Chú
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(model => model.Message)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                           Trạng Thái
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(model => model.Status)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Ngày Tạo
+                        </th>
+
+                        <td>
+
+                            @Html.DisplayFor(model => model.CreateAt)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <ul class="pager">
+            <li>@Html.ActionLink("Sửa ", "Edit", new { id = Model.Id })</li>
+            <li>@Html.ActionLink("Quay Lại", "Index")</li>
+
+        </ul>
+    </section>
+
+</div>

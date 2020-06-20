@@ -1,0 +1,99 @@
+﻿@model LandingPage.Models.Information
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared_Client/_LayoutClient.cshtml";
+}
+
+
+<!-- end recent blog -->
+<!--=================================================================================
+                            Start Contact Area
+==================================================================================-->
+
+<section id="eduservices-contact" class="contact-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <span>Do you have any Questions?</span>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-box">
+                    <h3><i class="icofont-google-map"></i> Address</h3>
+                    <p><a href="https://www.google.com/maps/place/Eco+Dream/20.9810254,105.8070009,18.04z/data=!4m13!1m7!3m6!1s0x3135acea910871c1:0x7fffe8d48608cc82!2zMzAwIMSQxrDhu51uZyBOZ3V54buFbiBYaeG7g24sIFTDom4gVHJp4buBdSwgVGhhbmggVHLDrCwgSMOgIE7hu5lpLCBWaWV0bmFt!3b1!8m2!3d20.9822731!4d105.8095539!3m4!1s0x3135adea7bc478f9:0x6ba7bff9cfef6af2!8m2!3d20.9805073!4d105.806886" target="_blank"> Eco Dream <br> 300 Nguyễn Xiển, Hà Nội </a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-box">
+                    <h3><i class="icofont-envelope"></i> Email</h3>
+                    <p><a href="#">info@business.com</a></p>
+                    <p><a href="#">support@business.com</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+                <div class="contact-box">
+                    <h3><i class="icofont-phone"></i> Phone</h3>
+                    <p><a href="#">+1 (424) 652-5294</a></p>
+                    <p><a href="#">+1 (424) 652-5282.</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="get-in-touch">
+                    <h3>Get in Touch</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+
+                @using (Html.BeginForm("SendMessage", "LandingPages", FormMethod.Post, new { @class = "contactForm", @id = "ajax-contact" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Your name", @id = "name", @Value = "" } })
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Your Email", @id = "email", @value = "" } })
+                               
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Your Phone Number", @id = "phone", @value = "" } })
+                                
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="contact-btn btn">Send Message</button>
+                            <!--Result notification -->
+                            <div id="error-message" class="text-center"></div>
+                            <div id="form-messages"></div>
+                        </div>
+                    </div>
+                }
+
+
+                <!-- <form id="contactForm"> -->
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End Contact Area -->
+<!--=================================================================================
+       START FOOTER
+==================================================================================-->

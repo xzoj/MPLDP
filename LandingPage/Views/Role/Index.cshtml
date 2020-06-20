@@ -1,0 +1,52 @@
+﻿@model List<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@using System.Collections.Specialized
+@{ 
+    Layout = "~/Views/Shared_Admin/_Layout.cshtml";
+}
+
+    
+<style>
+    .padding {
+        padding-top: 15px;
+        padding-bottom: 8px;
+    }
+</style>
+<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    MP Language
+                </header>
+                <div class="panel-body">
+                    <section id="unseen">
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    Role Name
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </section>
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
